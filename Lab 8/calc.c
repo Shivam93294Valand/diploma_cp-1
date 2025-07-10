@@ -18,29 +18,30 @@ int main() {
     printf("Enter second number: ");
     scanf("%f", &num2);
 
-    switch (choice) {
-        case 1:
-            result = num1 + num2;
-            printf("Result: %.2f + %.2f = %.2f\n", num1, num2, result);
-            break;
-        case 2:
+    if (operation == '+') {
+        result = num1 + num2;
+        printf("Result: %.2f + %.2f = %.2f\n", num1, num2, result);
+    } else {
+        if (operation == '-') {
             result = num1 - num2;
             printf("Result: %.2f - %.2f = %.2f\n", num1, num2, result);
-            break;
-        case 3:
-            result = num1 * num2;
-            printf("Result: %.2f * %.2f = %.2f\n", num1, num2, result);
-            break;
-        case 4:
-            if (num2 != 0) {
-                result = num1 / num2;
-                printf("Result: %.2f / %.2f = %.2f\n", num1, num2, result);
+        } else {
+            if (operation == '*') {
+                result = num1 * num2;
+                printf("Result: %.2f * %.2f = %.2f\n", num1, num2, result);
             } else {
-                printf("Error: Division by zero is not allowed.\n");
+                if (operation == '/') {
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                        printf("Result: %.2f / %.2f = %.2f\n", num1, num2, result);
+                    } else {
+                        printf("Error: Division by zero is not allowed.\n");
+                    }
+                } else {
+                    printf("Invalid operation selected.\n");
+                }
             }
-            break;
-        default:
-            printf("Invalid choice! Please enter a number between 1 and 4.\n");
+        }
     }
     return 0;
 }
