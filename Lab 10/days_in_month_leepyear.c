@@ -8,12 +8,8 @@ int main() {
     scanf("%d", &year);
 
     switch (month) {
-        case 1: case 3: case 5: case 7:
-        case 8: case 10: case 12:
+        case 1:
             printf("31 days");
-            break;
-        case 4: case 6: case 9: case 11:
-            printf("30 days");
             break;
         case 2:
             if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
@@ -21,8 +17,39 @@ int main() {
             else
                 printf("28 days");
             break;
+        case 3:
+            printf("31 days");
+            break;
+        case 4:
+            printf("30 days");
+            break;
+        case 5:
+            printf("31 days");
+            break;
+        case 6:
+            printf("30 days");
+            break;
+        case 7:
+            printf("31 days");
+            break;
+        case 8:
+            printf("31 days");
+            break;
+        case 9:
+            printf("30 days");
+            break;
+        case 10:
+            printf("31 days");
+            break;
+        case 11:
+            printf("30 days");
+            break;
+        case 12:
+            printf("31 days");
+            break;
         default:
             printf("Invalid month");
     }
+
     return 0;
 }
